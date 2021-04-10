@@ -60,7 +60,7 @@
 #define NUM_TOTAL_FREE_PINS            PINS_COUNT
 #define NUM_TOTAL_PINS                 PINS_COUNT
 #define ANALOG_INPUT_OFFSET            12
-#define LED_BUILTIN                    PIN_PA7
+#define LED_BUILTIN                    PIN_PD1
 #define EXTERNAL_NUM_INTERRUPTS        47
 #define digitalPinToAnalogInput(p)     ((p < 8) ? (p) : ((p) < 12) ? ((p) + 4) : ((p) < 20) ? ((p) - 12) : ((p) >= 22 && (p) <=25) ? ((p) - 10) : NOT_A_PIN)
 #define digitalOrAnalogPinToDigital(p) ((p < 8) ? ((p) + ANALOG_INPUT_OFFSET) : ((p) >= 8 && (p) <= 11) ? ((p) + ANALOG_INPUT_OFFSET + 2) : (((p) >= 12 && (p) <= 19) || ((p) >= 22 && (p) <= 25)) ? (p) : NOT_A_PIN)
@@ -90,6 +90,12 @@
 // SPI 0
 // No pinswap enabled by default
 // Pinswap 2 not available
+
+// https://github.com/arduino-libraries/WiFi101  //
+#define WINC1501_RESET_PIN  PIN_PA1
+#define WINC1501_INTN_PIN   PIN_PF2
+#define WINC1501_SPI_CS_PIN PIN_PA7
+
 #define SPI_INTERFACES_COUNT   1
 #define SPI_MUX                PORTMUX_SPI0_DEFAULT_gc
 #define SPI_MUX_PINSWAP_1      PORTMUX_SPI0_ALT1_gc
